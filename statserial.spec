@@ -10,6 +10,7 @@ Patch:		%{name}-1.1-config.patch
 Patch1: 	%{name}-1.1-dev.patch
 BuildRequires:	ncurses-devel
 BuildRequires:	glibc-static-devel 
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
 The statserial utility displays a table of the signals on a standard 9-pin or
