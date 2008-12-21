@@ -1,13 +1,14 @@
 Summary:	A tool which displays the status of serial port modem lines
 Name:		statserial
 Version:	1.1
-Release:	%mkrel 20
+Release:	%mkrel 21
 License:	BSD
 Group:		Communications
 URL:		ftp://sunsite.unc.edu/pub/Linux/system/serial/
-Source:		ftp://sunsite.unc.edu/pub/Linux/system/serial/%{name}-%{version}.tar.bz2
-Patch:		%{name}-1.1-config.patch
+Source0:	ftp://sunsite.unc.edu/pub/Linux/system/serial/%{name}-%{version}.tar.bz2
+Patch0:		%{name}-1.1-config.patch
 Patch1: 	%{name}-1.1-dev.patch
+Patch2:		statserial-1.1-LDFLAGS.diff
 BuildRequires:	ncurses-devel
 BuildRequires:	glibc-static-devel 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
@@ -23,18 +24,19 @@ modem problems.
 %prep
 
 %setup -q
-%patch -p1 -b .config
+%patch0 -p1 -b .config
 %patch1 -p1 -b .dev
+%patch2 -p0 -b .LDFLAGS
 
 %build
-%make CFLAGS="%{optflags} -O3"
+%make CFLAGS="%{optflags}" LDFLAGS="%{ldflags} -static"
 
 %install
 rm -rf %{buildroot}
 
 mkdir -p %{buildroot}/{%{_bindir},%{_mandir}/man1}
 
-install -m 755 -s statserial %{buildroot}%{_bindir}/statserial
+install -m 755 statserial %{buildroot}%{_bindir}/statserial
 install -m 444 statserial.1 %{buildroot}%{_mandir}/man1/statserial.1
 
 %clean
@@ -45,5 +47,3 @@ rm -rf %{buildroot}
 %doc COPYING ChangeLog README
 %{_bindir}/statserial
 %{_mandir}/man1/statserial.1*
-
-
