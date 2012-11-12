@@ -1,0 +1,11 @@
+--- Makefile	2008-12-22 00:35:45.000000000 +0100
++++ Makefile.oden	2008-12-22 00:37:27.000000000 +0100
+@@ -10,7 +10,7 @@
+ LDFLAGS = -static
+ 
+ statserial:	statserial.o
+-	$(CC) $(LDFLAGS) -o statserial statserial.o -lncurses
++	$(CC) $(CFLAGS) $(LDFLAGS) -o statserial statserial.o -lncurses
+ 
+ statserial.o: statserial.c
+ 	$(CC) -I/usr/include/ncurses $(CFLAGS) -c statserial.c
