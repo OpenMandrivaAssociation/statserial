@@ -47,3 +47,52 @@ rm -rf %{buildroot}
 %doc COPYING ChangeLog README
 %{_bindir}/statserial
 %{_mandir}/man1/statserial.1*
+
+
+%changelog
+* Fri May 06 2011 Oden Eriksson <oeriksson@mandriva.com> 1.1-25mdv2011.0
++ Revision: 670203
+- mass rebuild
+
+* Fri Dec 03 2010 Oden Eriksson <oeriksson@mandriva.com> 1.1-24mdv2011.0
++ Revision: 607753
+- rebuild
+
+* Mon Mar 15 2010 Oden Eriksson <oeriksson@mandriva.com> 1.1-23mdv2010.1
++ Revision: 520231
+- rebuilt for 2010.1
+
+* Thu Sep 03 2009 Christophe Fergeau <cfergeau@mandriva.com> 1.1-22mdv2010.0
++ Revision: 427216
+- rebuild
+
+* Mon Dec 22 2008 Oden Eriksson <oeriksson@mandriva.com> 1.1-21mdv2009.1
++ Revision: 317286
+- use %%ldflags
+
+* Wed Jun 18 2008 Thierry Vignaud <tv@mandriva.org> 1.1-20mdv2009.0
++ Revision: 225494
+- rebuild
+
+* Wed Mar 05 2008 Oden Eriksson <oeriksson@mandriva.com> 1.1-19mdv2008.1
++ Revision: 179540
+- rebuild
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+
+* Fri Mar 16 2007 Oden Eriksson <oeriksson@mandriva.com> 1.1-18mdv2007.1
++ Revision: 145159
+- Import statserial
+
+* Fri Mar 16 2007 Oden Eriksson <oeriksson@mandriva.com> 1.1-18mdv2007.1
+- use the %%mkrel macro
+- bunzip patches
+
+* Wed Oct 27 2004 Gwenole Beauchesne <gbeauchesne@mandrakesoft.com> 1.1-17mdk
+- fix build
+
