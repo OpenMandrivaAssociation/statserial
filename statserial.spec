@@ -1,7 +1,7 @@
 Summary:	A tool which displays the status of serial port modem lines
 Name:		statserial
 Version:	1.1
-Release:	29
+Release:	30
 License:	BSD
 Group:		Communications
 URL:		ftp://sunsite.unc.edu/pub/Linux/system/serial/
