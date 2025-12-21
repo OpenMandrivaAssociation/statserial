@@ -9,6 +9,7 @@ Source0:	ftp://sunsite.unc.edu/pub/Linux/system/serial/%{name}-%{version}.tar.bz
 Patch0:		%{name}-1.1-config.patch
 Patch1: 	%{name}-1.1-dev.patch
 Patch2:		statserial-1.1-LDFLAGS.diff
+BuildRequires:	make
 BuildRequires:	ncurses-devel
 BuildRequires:	glibc-static-devel 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
